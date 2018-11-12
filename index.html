@@ -15,6 +15,10 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -38,7 +42,7 @@
         <form>
           <div class="form-group">
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <label for="lidNummer">Lidnummer <span class="red">*</span></label>
               </div>
               <div class="col-md-3">
@@ -49,11 +53,11 @@
           </div>
           <div class="form-group">
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <label for="voornaam">Voornaam <span class="red">*</span></label>
               </div>
               <div class="col-md-3">
-                <input type="text" class="form-control" id="voornaam" placeholder="voornaam" required>
+                <input type="text" class="form-control" id="voornaam" placeholder="Voornaam" required>
               </div>
               <div class="col-md-2">
                 <label for="voornaam">Naam <span class="red">*</span></label>
@@ -66,52 +70,133 @@
 
           <div class="form-group">
             <div class="row">
-                <div class="col-md-2">
-                  <label for="email">GSM / Telefoon</label>
-                </div>
-                <div class="col-md-8">
-                  <input type="text" class="form-control" id="zone" aria-describedby="zonenr"
-                  placeholder="011"
-                    required>
-                  <small id="telHelp" class="form-text text-muted">Zone nr</small>
-                  <input type="text" class="form-control" id="tel" aria-describedby="tel"
-                  placeholder="121212"
-                    required>
-                  <small id="telHelp" class="form-text text-muted">Nummer</small>
-                </div>
+              <div class="col-md-3">
+                <label for="tel">GSM / Telefoon</label>
               </div>
+              <div class="col-md-2">
+                <input type="text" class="form-control" id="zone" aria-describedby="zonenr" placeholder="011">
+                <small id="telHelp" class="form-text text-muted">Zone nr</small>
+              </div>/
+              <div class="col-md-4">
+                <input type="text" class="form-control" id="tel" aria-describedby="tel" placeholder="121212">
+                <small id="telHelp" class="form-text text-muted">Nummer</small>
+              </div>
+            </div>
           </div>
 
+          <div class="form-group">
             <div class="row">
-                <div class="col-md-2">
-                  <label for="email">Email</label>
+              <div class="col-md-3">
+                <label for="email">Email</label>
+              </div>
+              <div class="col-md-5">
+                <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Email">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+              <div class="row">
+                <div class="col-md-3">
+                  <label for="begeleider">Begeleider</label>
                 </div>
                 <div class="col-md-3">
-                  <input type="email" class="form-control" id="email" aria-describedby="email"
-                  placeholder="Email"
-                    required>
+                  <input type="text" class="form-control" id="voornaam_begeleider" placeholder="Voornaam">
+                </div>
+                <div class="col-md-3">
+                  <input type="text" class="form-control" id="naam_begeleider" placeholder="Naam">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                  <div class="col-md-3">
+                    <label for="email">GSM / Telefoon begeleider</label>
+                  </div>
+                  <div class="col-md-2">
+                    <input type="text" class="form-control" id="zone" aria-describedby="zonenr" placeholder="011">
+                    <small id="telHelp" class="form-text text-muted">Zone nr</small>
+                  </div>/
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" id="tel" aria-describedby="tel" placeholder="121212">
+                    <small id="telHelp" class="form-text text-muted">Nummer</small>
+                  </div>
                 </div>
               </div>
 
+            <div class="form-group">
               <div class="row">
-                  <div class="col-md-2">
-                    <label for="lidNummer">Lidnummer <span class="red">*</span></label>
-                  </div>
+                <div class="col-md-3">
+                  <label for="type_rit">Type rit <span class="red">*</span></label>
+                </div>
+                <div class="col-md-8">
+                  <select class="form-control" required>
+                      <option value=""></option>
+                      <option>Enkele rit</option>
+                      <option>Heen - en terugrit</option>
+                      <option>Heen - en terugrit op andere dag</option>
+                    </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
                   <div class="col-md-3">
-                    <input type="text" class="form-control" id="lidNummer" aria-describedby="lidNummer" placeholder="Lidnummer"
-                      required>
+                    <label for="aard_rit">Aard van de rit <span class="red">*</span></label>
+                  </div>
+                  <div class="col-md-8">
+                    <select class="form-control" required>
+                        <option value=""></option>
+                        <option value="bezoek">Bezoek</option>
+                        <option value="boodschappen">Boodschappen</option>
+                        <option value="dagcentrum">Dagcentrum</option>
+                        <option value="dokter">Dokter</option>
+                        <option value="kapsalon">Kapsalon</option>
+                      </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <label for="rollator">Rollator <span class="red">*</span></label>
+                    </div>
+                    <div class="col-md-8">
+                      <select class="form-control" required>
+                          <option value=""></option>
+                          <option value="ja">Ja</option>
+                          <option value="nee">Nee</option>
+                        </select>
+                    </div>
                   </div>
                 </div>
 
+              <div class="form-group">
                 <div class="row">
-                    <div class="col-md-2">
-                      <label for="lidNummer">Lidnummer <span class="red">*</span></label>
-                    </div>
-                    <div class="col-md-3">
-                      <input type="text" class="form-control" id="lidNummer" aria-describedby="lidNummer" placeholder="Lidnummer"
-                        required>
-                    </div>
+                  <div class="col-md-3">
+                    <label for="ophaalDatum">Datum ophaling</label>
                   </div>
+                  <div class="col-sm-6">
+                      <div class="form-group">
+                          <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                              <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+                              <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                  <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <script type="text/javascript">
+                      $(function () {
+                          document.getElementById('#datetimepicker1').datetimepicker();
+                      });
+                  </script>
+                </div>
+              </div>
+
 
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
@@ -122,19 +207,17 @@
 
 
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-  <script>
-    window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')
-
-  </script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/af.js">
+  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
 </body>
 
 </html>
