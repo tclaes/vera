@@ -1,16 +1,11 @@
-/*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
 html {
   color: #222222;
   font-size: 1rem;
   line-height: 1.4;
+}
+
+:root {
+  --primary-color: #ea5a06;
 }
 
 ::-moz-selection {
@@ -62,14 +57,18 @@ h1 {
 }
 
 .btn-primary {
-  background: #ea5a06;
-  border: #ea5a06;
+  background: var(--primary-color);
+  border: var(--primary-color);
 }
 
 .main-form {
-  border: #ea5a06 3px solid;
-  border-radius: 5px;
   background: rgba(255, 255, 255, 0.9);
+  border: var(--primary-color) 3px solid;
+  border-radius: 5px;
+}
+
+label {
+  font-weight: 600;
 }
 
 /* ==========================================================================
