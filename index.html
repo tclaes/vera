@@ -72,13 +72,11 @@
               <div class="col-md-3">
                 <label for="tel">GSM / Telefoon</label>
               </div>
-              <div class="col-md-2">
-                <input type="number" class="form-control form-control-sm" id="zone" aria-describedby="zonenr" placeholder="011">
-                <small id="telHelp" class="form-text text-muted">Zone nr</small>
-              </div>/
-              <div class="col-md-4">
-                <input type="number" class="form-control form-control-sm" id="tel" aria-describedby="tel" placeholder="121212">
-                <small id="telHelp" class="form-text text-muted">Nummer</small>
+              <div class="col-md-5">
+                <input type="tel" class="form-control form-control-sm"
+                  id="zone" aria-describedby="zonenr" minlength="9" maxlength="11"
+                  pattern="[0-9]{2,4}-[0-9]{6,7}">
+                <small id="telHelp" class="form-text text-muted">bv. 011-121212 / 0476-985848</small>
               </div>
             </div>
           </div>
@@ -114,13 +112,11 @@
               <div class="col-md-3">
                 <label for="tel_begeleider">GSM / Telefoon begeleider</label>
               </div>
-              <div class="col-md-2">
-                <input type="number" class="form-control form-control-sm" id="zone_begeleider" aria-describedby="zonenr" placeholder="011">
-                <small id="telHelp" class="form-text text-muted">Zone nr</small>
-              </div>/
-              <div class="col-md-4">
-                <input type="number" class="form-control form-control-sm" id="tel_begeleider" aria-describedby="tel" placeholder="121212">
-                <small id="telHelp" class="form-text text-muted">Nummer</small>
+              <div class="col-md-5">
+                <input type="number" class="form-control form-control-sm" id="zone_begeleider" aria-describedby="zonenr" placeholder="011"
+                  minlength="9" maxlength="11" pattern="[0-9]{2,4}-[0-9]{6,7}"
+                >
+                <small id="telHelp" class="form-text text-muted">bv. 011-121212 / 0476-985848</small>
               </div>
             </div>
           </div>
@@ -271,13 +267,10 @@
                     <div class="col-md-3">
                       <label for="tel_aanvrager">GSM / Telefoon aanvrager <span class="red">*</span></label>
                     </div>
-                    <div class="col-md-2">
-                      <input type="number" class="form-control form-control-sm" id="zone_aanvrager" aria-describedby="zonenr" placeholder="011" required>
-                      <small id="telHelp" class="form-text text-muted">Zone nr</small>
-                    </div>/
-                    <div class="col-md-4">
-                      <input type="number" class="form-control form-control-sm" id="tel_aanvrager" aria-describedby="tel" placeholder="121212" required>
-                      <small id="telHelp" class="form-text text-muted">Nummer</small>
+                    <div class="col-md-5">
+                      <input type="number" class="form-control form-control-sm" id="zone_aanvrager" aria-describedby="zonenr" placeholder="011"
+                      minlength="9" maxlength="11" pattern="[0-9]{2,4}-[0-9]{6,7}" required>
+                      <small id="telHelp" class="form-text text-muted">bv. 011-121212 / 0476-985848</small>
                     </div>
                   </div>
                 </div>
