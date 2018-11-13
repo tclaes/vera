@@ -6,6 +6,7 @@ html {
 
 :root {
   --primary-color: #ea5a06;
+  --black: #000000;
 }
 
 ::-moz-selection {
@@ -30,7 +31,7 @@ textarea {
    ========================================================================== */
 .browserupgrade {
   background: #ccc;
-  color: #000000;
+  color: var(--black);
   margin: 0.2em 0;
   padding: 0.2em 0;
 }
@@ -44,8 +45,8 @@ body {
 }
 
 h1 {
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 1.6rem;
+  font-weight: 900;
 }
 
 .bg-white {
@@ -69,6 +70,12 @@ h1 {
 
 label {
   font-weight: 600;
+}
+
+#rit_info {
+  border: var(--primary-color) 1.5px solid;
+  border-radius: 3px;
+  padding: 10px;
 }
 
 /* ==========================================================================
