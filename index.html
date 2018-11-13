@@ -14,7 +14,7 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/main.min.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
 </head>
@@ -38,7 +38,7 @@
           te vragen.
           Voorbeeld: een rit voor maandag kan online aangevraagd worden tot de donderdag voordien VOOR 13.30 uur.
           Items met een rood sterretje (<span class="red">*</span>) zijn verplicht in te vullen.</p>
-        <form>
+        <form id="frmRit">
           <div class="form-group">
             <div class="row">
               <div class="col-md-3">
@@ -180,7 +180,7 @@
                 <label for="ophaalDatum">Datum ophaling <span class="red">*</span></label>
               </div>
               <div class="col-sm-4">
-                <input type="datetime-local" class="form-control" />
+                <input type="datetime-local" class="form-control" id="datum-ophaling" />
               </div>
             </div>
           </div>
@@ -199,7 +199,7 @@
           <div class="form-group">
             <div class="row">
               <div class="col-md-3">
-                <label for="ophaalAdres">Ophaaladres <span class="red">*  </span></label>
+                <label for="ophaalAdres">Ophaaladres <span class="red">*</span></label>
               </div>
               <div class="col-sm-4">
                 <input type="text" class="form-control" id="straat" />
@@ -258,10 +258,10 @@
                     <label for="voornaam_aanvrager">Aanvrager <span class="red">*</span></label>
                   </div>
                   <div class="col-md-3">
-                    <input type="text" class="form-control form-control-sm" id="voornaam_aanvrager" placeholder="Voornaam">
+                    <input type="text" class="form-control form-control-sm" id="voornaam_aanvrager" placeholder="Voornaam" required>
                   </div>
                   <div class="col-md-3">
-                    <input type="text" class="form-control form-control-sm" id="naam_aanvrager" placeholder="Naam">
+                    <input type="text" class="form-control form-control-sm" id="naam_aanvrager" placeholder="Naam" required>
                   </div>
                 </div>
               </div>
@@ -272,11 +272,11 @@
                       <label for="tel_aanvrager">GSM / Telefoon aanvrager <span class="red">*</span></label>
                     </div>
                     <div class="col-md-2">
-                      <input type="number" class="form-control form-control-sm" id="zone_aanvrager" aria-describedby="zonenr" placeholder="011">
+                      <input type="number" class="form-control form-control-sm" id="zone_aanvrager" aria-describedby="zonenr" placeholder="011" required>
                       <small id="telHelp" class="form-text text-muted">Zone nr</small>
                     </div>/
                     <div class="col-md-4">
-                      <input type="number" class="form-control form-control-sm" id="tel_aanvrager" aria-describedby="tel" placeholder="121212">
+                      <input type="number" class="form-control form-control-sm" id="tel_aanvrager" aria-describedby="tel" placeholder="121212" required>
                       <small id="telHelp" class="form-text text-muted">Nummer</small>
                     </div>
                   </div>
