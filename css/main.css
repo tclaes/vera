@@ -57,6 +57,10 @@ h1 {
   color: red;
 }
 
+.white {
+  color: white;
+}
+
 .btn-primary {
   background: var(--primary-color);
   border: var(--primary-color);
@@ -76,6 +80,10 @@ label {
   border: var(--primary-color) 1.5px solid;
   border-radius: 3px;
   padding: 10px;
+}
+
+#map {
+  height: 100%;
 }
 
 /* ==========================================================================
