@@ -5,8 +5,10 @@ html {
 }
 
 :root {
-  --primary-color: #ea5a06;
+  --primary-color: #108fc1;
+  --secondary-color: #ecf9fd;
   --black: #000000;
+  --background: #ffffff;
 }
 
 ::-moz-selection {
@@ -40,7 +42,7 @@ textarea {
    Author's custom styles
    ========================================================================== */
 body {
-  background: black;
+  background: var(--background);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -57,6 +59,10 @@ h1 {
   color: red;
 }
 
+.white {
+  color: white;
+}
+
 .btn-primary {
   background: var(--primary-color);
   border: var(--primary-color);
@@ -68,6 +74,10 @@ h1 {
   border-radius: 5px;
 }
 
+.form-control {
+  background: #ecf9fd;
+}
+
 label {
   font-weight: 600;
 }
@@ -76,6 +86,10 @@ label {
   border: var(--primary-color) 1.5px solid;
   border-radius: 3px;
   padding: 10px;
+}
+
+#map {
+  height: 100%;
 }
 
 /* ==========================================================================
