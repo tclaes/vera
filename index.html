@@ -32,11 +32,11 @@
     </div>
     <div class="row d-flex justify-content-center">
       <div class="col-md-11 m-2 p-5 main-form">
-        <h1 class="mb-4">Aanvraag gewone rit MMC Leuven</h1>
-        <p id="rit_info" class="mb-4">Met dit formulier kan u een rit aanvragen. Hou er rekening mee de rit tenminste 2
-          WERKDAGEN op voorhand aan
-          te vragen.
-          Voorbeeld: een rit voor maandag kan online aangevraagd worden tot de donderdag voordien VOOR 13.30 uur.
+        <h1 class="mb-4">Aanvraag gewone rit</h1>
+        <p id="rit_info" class="mb-4">Met dit formulier kan u een rit aanvragen. Hou er rekening mee de rit tenminste
+          <b>2 werkdagen</b> op voorhand aan
+          te vragen. <br>
+          Voorbeeld: een rit voor maandag kan online aangevraagd worden tot de donderdag voordien <b>voor</b> 13.30 uur.
           Items met een rood sterretje (<span class="red">*</span>) zijn verplicht in te vullen.</p>
 
         <form id="frmRit">
@@ -242,6 +242,15 @@
               </div>
           </div>
 
+          <div class="row mb-3">
+            <div class="col-md-5">
+              <button id="btnRoute" class="btn btn-primary">Route berekenen</button>
+            </div>
+            <div class="col-md-3">
+              <div id="aantal_km"></div>
+            </div>
+          </div>
+
           <div style="max-width: 560px; height: 400px">
             <div id="map"></div>
           </div>
@@ -328,20 +337,9 @@
   </div>
 
     <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
-        console.log(map);
-      }
+
     </script>
-    <script src="https://maps.googleapis.com/maps/api/distancematrix/json
-    ?origins=Beringen
-    &destinations=Hasselt
-    &client=AIzaSyBGoOKZpGSSHICBi1uM1bzOzdxfqKPdwOg
-    &signature="
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGoOKZpGSSHICBi1uM1bzOzdxfqKPdwOg&callback=initMap"
     async defer></script>
 
 
