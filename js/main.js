@@ -108,7 +108,7 @@ function initMap() {
   directionsDisplay = new google.maps.DirectionsRenderer();
   var location = new google.maps.LatLng(50.930691, 5.332480);
   var mapOptions = {
-    zoom:7,
+    zoom:8,
     center: location
   }
 
@@ -119,10 +119,17 @@ function initMap() {
 }
 
 function calcRoute(start, end) {
-  var distanceMatrixService = new google.maps.DistanceMatrixService();
-  console.log(Object.values(start).join(' '));
+
   var start = Object.values(start).join(' ');
   var end = Object.values(end).join(' ');
+
+  var distanceMatrixService = new google.maps.DistanceMatrixService();
+  distanceMatrixService.getDistanceMatrix({
+    origins: [start],
+    destinations: [end],
+    travelMode: 'DRIVING'
+  }, callback)
+
   var request = {
     origin: start,
     destination: end,
@@ -134,4 +141,24 @@ function calcRoute(start, end) {
     }
   })
 
+}
+
+function callback(response, status) {
+  if (status == 'OK') {
+    var origins = response.originAddresses;
+    var destinations = response.destinationAddresses;
+
+    for (var i = 0; i < origins.length; i++) {
+      var results = response.rows[i].elements;
+      for (var j = 0; j < results.length; j++) {
+        var element = results[j];
+        var distance = element.distance.text;
+        var duration = element.duration.text;
+        var from = origins[i];
+        var to = destinations[j];
+      }
+    }
+    $('#aantal_km').text("Afstand: " + distance);
+    console.log(distance);
+  }
 }
