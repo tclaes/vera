@@ -5,8 +5,11 @@ html {
 }
 
 :root {
-  --primary-color: #ea5a06;
+  --primary-color: #108fc1;
+  --secondary-color: #ecf9fd;
   --black: #000000;
+  --background: #ffffff;
+
 }
 
 ::-moz-selection {
@@ -43,7 +46,7 @@ textarea {
    ========================================================================== */
 
 body {
-  background: black;
+  background: var(--background);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -73,6 +76,10 @@ h1 {
   background: rgba(255,255,255, 0.9);
   border: var(--primary-color) 3px solid;
   border-radius: 5px;
+}
+
+.form-control {
+  background: #ecf9fd;
 }
 
 label {
