@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 const createAdress = (straat, gemeente, postcode, land) => {
   return {
     straat: straat,
@@ -99,9 +97,31 @@ $('#frmRit').on('submit', (e) => {
     datumTerug: $('#ophaalDatum').val()
   }
 
-	console.log(ritAanvraag);
-
+  const json_data = JSON.stringify(ritAanvraag);
+  const url = "https://vera.bettywebblocks.com/aanvraag"
+  const ritAanvragen  = postRequest(url, json_data);
+  ritAanvragen()
+    .then(data => console.log(JSON.stringify(data)))
+    .catch(error => console.log(error));
 })
+
+const postRequest = (url, data) => {
+
+  return fetch(url, {
+    method: "POST",
+    mode:"cors",
+    cache: "no-cache",
+    credentials: "", //TODO Need to be provided
+    headers: {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    redirect: "follow", // manual, *follow, error
+    referrer: "no-referrer", // no-referrer, *client
+    body: JSON.stringify(data), // body data type must match "Content-Type" header
+  })
+  .then(data => data.json())
+}
+
 
 function initMap() {
   directionsService = new google.maps.DirectionsService();
@@ -115,22 +135,21 @@ function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), mapOptions);
   directionsDisplay.setMap(map);
   directionsDisplay.setPanel(document.getElementById('directionsPanel'));
-  calcRoute();
 }
 
-function calcRoute(start, end) {
+const calcRoute = (start, end) => {
 
-  var start = Object.values(start).join(' ');
-  var end = Object.values(end).join(' ');
+  start = Object.values(start).join(' ');
+  end = Object.values(end).join(' ');
 
-  var distanceMatrixService = new google.maps.DistanceMatrixService();
+  const distanceMatrixService = new google.maps.DistanceMatrixService();
   distanceMatrixService.getDistanceMatrix({
     origins: [start],
     destinations: [end],
     travelMode: 'DRIVING'
   }, callback)
 
-  var request = {
+  let request = {
     origin: start,
     destination: end,
     travelMode: 'DRIVING'
@@ -143,10 +162,10 @@ function calcRoute(start, end) {
 
 }
 
-function callback(response, status) {
+const callback = (response, status) => {
   if (status == 'OK') {
-    var origins = response.originAddresses;
-    var destinations = response.destinationAddresses;
+    const origins = response.originAddresses;
+    const destinations = response.destinationAddresses;
 
     for (var i = 0; i < origins.length; i++) {
       var results = response.rows[i].elements;
