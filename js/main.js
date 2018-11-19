@@ -137,12 +137,12 @@ function initMap() {
   directionsDisplay.setPanel(document.getElementById('directionsPanel'));
 }
 
-function calcRoute(start, end) {
+const calcRoute = (start, end) => {
 
-  const start = Object.values(start).join(' ');
-  const end = Object.values(end).join(' ');
+  start = Object.values(start).join(' ');
+  end = Object.values(end).join(' ');
 
-  let distanceMatrixService = new google.maps.DistanceMatrixService();
+  const distanceMatrixService = new google.maps.DistanceMatrixService();
   distanceMatrixService.getDistanceMatrix({
     origins: [start],
     destinations: [end],
@@ -162,10 +162,10 @@ function calcRoute(start, end) {
 
 }
 
-function callback(response, status) {
+const callback = (response, status) => {
   if (status == 'OK') {
-    var origins = response.originAddresses;
-    var destinations = response.destinationAddresses;
+    const origins = response.originAddresses;
+    const destinations = response.destinationAddresses;
 
     for (var i = 0; i < origins.length; i++) {
       var results = response.rows[i].elements;
