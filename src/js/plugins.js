@@ -1,5 +1,5 @@
 // Avoid `console` errors in browsers that lack a console.
-(function() {
+export default (function() {
   var method;
   var noop = function () {};
   var methods = [

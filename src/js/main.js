@@ -181,3 +181,5 @@ const callback = (response, status) => {
     console.log(distance);
   }
 }
+
+export default class {};

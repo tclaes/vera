@@ -1,10 +1,11 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: __dirname + '/src/app/index.js',
+  entry: path.resolve(__dirname, './src/index.js'),
   output: {
-    path: __dirname + "/docs",
+    path: path.resolve(__dirname, "./docs"),
     filename: 'bundle.js',
     publicPath: '/'
   },
@@ -22,30 +23,19 @@ module.exports = {
         loader: "style-loader"
       }, {
         loader: "css-loader"
-      }, {
-        loader: "postcss-loader",
-        options: {
-          plugins: function() {
-            return [
-              require('precss'),
-              require('autoprefixer')
-            ];
-          }
-        },
+      },{
         loader: 'sass-loader'
       }]
-    }
-
-    ]
+    }]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: __dirname + "/src/public/index.html",
+      template: __dirname + "/src/index.html",
       inject: 'body'
     })
   ],
   devServer: {
-    contentBase: './src/public',
+    contentBase: './src',
     port: 7700,
   }
 }
